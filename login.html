@@ -1,0 +1,67 @@
+<html>
+    <head>
+       <link rel="stylesheet" href="log.css">
+    </head>
+    <body>
+        <div class="menu">
+        <img src="LOGO.png" class="logo" alt="Logo" />
+        <ul>
+          <li><a href="file:///C:/Users/admin/Desktop/airbnb%20projct/airbnb.html"> <h3>HOME</h3>  </a></li>
+          <li><a href="restaurant.html">  <h3>Restaurants</h3> </a></li>
+          <li><a href="ghita.html">  <h3>Hotels</h3> </a></li>
+          <li><a href="login.html">  <h3>LOGIN</h3> </li>
+          <li><a href="contact.html">  <h3>Contact us</h3> </a></li>
+        </ul>
+      </div> 
+
+
+        <div id="div2">
+                <form action="page5.html" onsubmit="return login()">
+                <h2>Login form</h2>
+                <label for="in3">UserName:</label>
+              <input type="text" id="in3"><br>
+                <label for="in4">Password:</label>
+                 <input type="password" id="in4"><br>
+                <span id="s2" style="color: red;"></span><br>
+                <input type="checkbox" onclick="showPass()"> Show password
+                <input type="submit" value="login">
+                <div class="Create-account">
+                    <p>D'ont have an account? <a href="sign.html">Create account</a></p>
+                  </div>
+            </form>
+        </div>
+<script>
+    
+
+
+   function showPass(){
+
+        var passValue = document.getElementById('in4');
+              if(passValue.type == 'text'){
+            passValue.type = 'password';
+}else if(passValue.type == 'password'){
+           passValue.type = 'text';
+}
+}
+
+function login(){
+             var userNameIn3 = document.getElementById('in3').value;
+            var passwordIn4 = document.getElementById('in4').value;
+        if(userNameIn3==''){
+      document.getElementById('s2').innerHTML = "username must be filled out";
+           return false;
+               }else if(passwordIn4==''){
+        document.getElementById('s2').innerHTML = "password must be filled out";
+    return false;
+    }
+             for(var i=0;i<users.length;i++){
+       if(userNameIn3==users[i].username  && passwordIn4==users[i].password){ 
+     return true;
+     }
+    }
+    document.getElementById('s2').innerHTML = "password and username do not match";
+     return false;
+                }
+</script>
+    </body>
+</html>
